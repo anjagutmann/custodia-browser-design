@@ -1,0 +1,107 @@
+* {
+    font-family: 'Arial', sans-serif;
+  }
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+  .top-bar {
+    background: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  .control-buttons {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  .control-buttons button {
+    background: #D9D9D9;
+    position: relative;
+    border: none;
+    color: rgb(53, 53, 53);
+    font-size: 1em;
+    width: 1.2em; 
+    height: 1.2em; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .control-buttons .icon {
+    opacity: 0; 
+    transition: opacity 0.3s; 
+  }
+  
+  .control-buttons button:hover .icon {
+    opacity: 1; 
+  }
+
+  .mode-buttons {
+    display: absolute;
+    gap: 1em;
+  }
+  .mode-buttons button {
+    background: none;
+    border: 2px solid rgb(53, 53, 53);
+    color: rgb(53, 53, 53);
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .mode-buttons button:hover {
+    background: white;
+    color: #333;
+  }
+  
+  .navbar {
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .search-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-input {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .tab-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .tab {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d23f31;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+
+  .tab:nth-child(2) {
+    background: #ffa500;
+  }
+
+  .tab:nth-child(3) {
+    background: #008000;
+  }
