@@ -44,39 +44,130 @@ body {
     opacity: 1; 
   }
 
-  .mode-buttons {
-    display: absolute;
-    gap: 1em;
-  }
   .mode-buttons button {
-    background: none;
-    border: 2px solid rgb(53, 53, 53);
-    color: rgb(53, 53, 53);
-    border-radius: 5px;
-    padding: 5px 10px;
+    border: none;
+    border-radius: 50%;
+    width: 30px; /* Oder passen Sie die Größe nach Bedarf an */
+    height: 30px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    margin-right: 5px; /* Abstand zwischen den Buttons */
   }
-  .mode-buttons button:hover {
-    background: white;
-    color: #333;
+  
+  .button-noise {
+    /* Radialer Verlauf und Grund-Styling */
+    background-image: radial-gradient(circle, #D9D9D9 0%, #000000 100%);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: transform 0.3s; /* Glatte Transformation */
   }
+  
+  .button-noise:hover {
+    transform: scale(1.1);
+  }
+  
+  .growing-circle {
+    position: absolute; 
+    width: 30em;
+    height: 30em;
+    border-radius: 50%;
+    background: rgba(0, 0, 0);
+    transform: scale(0);
+    transition: transform 0.5s ease-out, opacity 1.5s ease-out;
+    transform-origin: center;
+  }
+  
+  /* Container für die Animation */
+.viewport-border {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Verhindert Interaktionen mit dem Container */
+  z-index: 9999; /* Stellt sicher, dass es über anderen Elementen liegt */
+}
+
+.viewport-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; /* Inkludiert Rand in Breite und Höhe */
+  border: 0.2em dotted black; /* Punktierter Rand */
+  opacity: 0;
+  animation: drawBorder 2s forwards;
+}
+
+/* Animation für den Rand */
+@keyframes drawBorder {
+  to {
+    opacity: 1;
+    border: 0.2em dotted #28E260; 
+  }
+}
+
+  
+  .button-bubble {
+    background-color: #ffffff;
+  }
+  
+  .button-bubble:hover {
+    background-color: #BCE0E0; /* Hover-Farbe für den Bubble Button */
+  }
+  
   
   .navbar {
     color: white;
-    padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .search-area {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1em;
+    flex-grow: 1; /* Lässt den Suchbereich wachsen, um mehr Platz einzunehmen */
+    margin: auto;
   }
 
   .search-input {
-    padding: 5px;
-    font-size: 16px;
+    color: #e4e4e4;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    font-size: 10em;
+    max-width: 4em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  button {
+    background: transparent;
+    border: none; 
+    cursor: pointer;
+    padding: 0;
+    outline: none; 
+
+  }
+
+  button .fa-search {
+    color: #333;
+    font-size: 4em; 
+    align-items: center;
   }
 
   .tab-container {
