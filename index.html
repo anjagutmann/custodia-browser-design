@@ -5,15 +5,19 @@
     <title>Custodia</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Plus+Jakarta+Sans:wght@400&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Plus+Jakarta+Sans:wght@600&display=swap');
     </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <script src="js/script.js"></script>
 
     <div class="top-bar">
+      <div class="button-row">
         <div class="control-buttons">
           <button onclick="windowClose()"><span class="icon">×</span></button>
           <button onclick="windowMinimize()"><span class="icon">─</span></button>
@@ -21,31 +25,72 @@
         </div>
         <div class="mode-buttons">
           <button id="button-noise" class="button-noise" onclick="onNoiseButtonClick()"></button>
-          <button class="button-bubble" onclick="toggleBubbleMode()"></button>
         </div>
-        <div id="growing-circle" class="growing-circle"></div>
-        
-    </div>
-    <div class="second-bar">
-      <div class="arrow-back">
-        <button><i class="fa fa-search"></i></button>
       </div>
-      <div class="arrow-forward">
+      <div class="top-bar-tabs">
+          <div class="tab active">Katzenbabys</div>
+          <div class="tab">Hundebabys</div>
+          <div class="tab">+</div>
+        </div>
+      </div>          
+    </div>
+      
+    <!-- <div id="growing-circle" class="growing-circle"></div> -->
 
+    <div class="mini-search-area">
+
+      <div class="mode-button">
+        <span class="material-symbols-outlined">school</span>
+        <div>Hochschule</div>
+        <div class="additional-modes">
+          <div class="mode">Arbeit</div>
+          <div class="mode">Kirche</div>
+          <div class="mode">Selbstständigkeit</div>
+          <div class="mode">+</div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="search">
+        <div class="custodia-logo">Custodia</div>
+      <div class="arrow">
+        <button class="arrow-buttons"><span class="material-symbols-outlined">chevron_left</span></button>
+        <button class="arrow-buttons"><span class="material-symbols-outlined">chevron_right</span></button>
+      </div>
+      <div class="searching-area">
+        <button><span class="material-symbols-outlined">search</span>
+          <div>Suchbegriff eingeben</div>
+        </button>
+      </div>
+      <button class="refresh"><span class="material-symbols-outlined">refresh</span></button>
+    </div>
+
+      <div class="social-media">
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-whatsapp"></a>
+        <a href="#"class="fa"><span class="material-symbols-outlined">add</span></a>
+      </div>
+      <div class="settings">
+        <div class="profil">
+          <button class="setting-buttons"><span class="material-symbols-outlined">person</span><div>Profil</div></button>
+        </div>
+        <div class="setting">
+          <button class="setting-buttons"><span class="material-symbols-outlined">settings</span><div>Einstellungen</div></button>
+        </div>
+        <div class="local">
+          <button class="setting-location-button"><span class="material-symbols-outlined">location_on</span></button>
+        </div>
       </div>
     </div>
   
-    <!-- <div class="tab-container">
-        <div class="tab">+</div>
-        <div class="tab">Tab1</div>
-        <div class="tab">Tab2</div>
-    </div> -->
-    <div class="navbar">
+    <!-- <div class="navbar">
         <div class="search-area">
           <input type="text" class="search-input" placeholder="Search">
           <button><span class="material-symbols-outlined">search</span></button>
         </div>
-    </div>
+    </div> -->
    
 </body>
 </html>

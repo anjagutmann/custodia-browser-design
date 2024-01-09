@@ -1,10 +1,16 @@
 * {
-    font-family: 'Arial', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   }
 
 body {
     padding: 0;
     margin: 0;
+}
+
+.custodia-logo{
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 0 1em 0 0;
 }
 
   .top-bar {
@@ -25,8 +31,8 @@ body {
     border: none;
     color: rgb(53, 53, 53);
     font-size: 1em;
-    width: 1.2em; 
-    height: 1.2em; 
+    width: 1em; 
+    height: 1em; 
     border-radius: 50%; 
     display: flex;
     align-items: center; 
@@ -47,7 +53,7 @@ body {
   .mode-buttons button {
     border: none;
     border-radius: 50%;
-    width: 30px; /* Oder passen Sie die Größe nach Bedarf an */
+    width: 30px; 
     height: 30px;
     cursor: pointer;
     display: flex;
@@ -169,30 +175,188 @@ body {
     font-size: 4em; 
     align-items: center;
   }
+  
+  .top-bar {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: space-between; /* Platziert die Buttons an den gegenüberliegenden Enden */
+    width: 100%;
+  }
+
+
+  .top-bar-tabs {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
 
   .tab-container {
     display: flex;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
+    justify-content: flex-start; /* Links ausrichten */
+    gap: 0.5em;
+    padding: 0 0 0 4em ;
   }
 
   .tab {
-    width: 100px;
-    height: 100px;
+    width: 10em;
+    height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #d23f31;
+    background: #ffffff;
+    color: rgb(75, 75, 75);
+    font-size: 0.8em;
+    font-weight: 100;
+    border-radius: 10em;
+    padding: 0 4em 0 0;
+    cursor: pointer;
+    border-bottom: 3px solid transparent; /* Unsichtbare Border, um Layoutverschiebungen zu vermeiden */
+    transition: border-bottom-color 0.3s; 
+  }
+  .mini-search-area {
+    width: 90vw;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1em 2em rgba(0, 0, 0, 0.1); /* X-Offset, Y-Offset, Blur-Radius, Farbe */
+  }
+
+  .mode-button {
+    background-color: #28E260;
     color: white;
-    font-size: 24px;
-    border-radius: 10px;
-  }
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1.2em;
+    border: none;
+    border-radius: 20em;
+    font-size: 1em;
+    max-width: max-content;
+    cursor: pointer;
+}
 
-  .tab:nth-child(2) {
-    background: #ffa500;
-  }
+.mode-button > .material-symbols-outlined,
+.mode-button > div {
+  margin-right: 10px;
+}
 
-  .tab:nth-child(3) {
-    background: #008000;
-  }
+.mode-button button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.mode-button:hover button {
+  opacity: 1; 
+  visibility: visible;
+}
+
+.mode-button .additional-modes {
+  display: none;
+  position: absolute;
+  left: 100%; /* Positioniert die zusätzlichen Modes rechts vom Mode-Button */
+  top: 0;
+  background: #f0f0f0; /* Hintergrundfarbe der zusätzlichen Modes */
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.additional-modes {
+  flex-direction: column;
+  background-color: #e0e0e0; /* Graue Farbe für die zusätzlichen Mode-Buttons */
+  border-radius: 5px;
+  width: max-content;
+}
+
+
+.mode-button:hover .additional-modes {
+  display: flex;
+}
+
+.mode {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mode:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.mode:hover {
+  color: rgba(0,0,0,0.8);
+}
+
+.arrow-buttons {
+  background-color: #F5F5F5;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+
+.searching-area button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 25em;
+  padding: 0.5em 10em 0.5em 0.5em;
+  border-radius: 3em;
+  background-color: #F5F5F5; /* Hintergrundfarbe */
+  cursor: pointer;
+}
+
+.fa {
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000000;
+  background-color: #F5F5F5;
+  border-radius: 3em;
+  font-size: 1em; /* Größe des Icons */
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  gap: 0.5em;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5em;
+  border-radius: 3em;
+}
+.setting-buttons {
+  display: flex; /* Setzt das Flexbox-Layout */
+  align-items: center; /* Zentriert die Elemente vertikal */
+  justify-content: center; /* Zentriert die Elemente horizontal, wenn Sie möchten */
+  gap: 0.5em;
+  background-color: #F5F5F5;
+  padding: 0.5em 1em;
+  border-radius: 3em;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5em;
+  border-radius: 3em;
+}

@@ -43,3 +43,29 @@ function onNoiseButtonClick() {
   simulateDataPoisoning();
   toggleNoiseMode();
 }
+
+// Funktion zum Hinzufügen von Klick-Event-Listeners zu jedem Tab
+function setupTabs() {
+    var tabs = document.querySelectorAll('.tab-container .tab');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        // Entfernt die aktive Klasse von allen Tabs
+        tabs.forEach(function(tab) {
+          tab.classList.remove('active');
+        });
+        // Fügt die aktive Klasse zum angeklickten Tab hinzu
+        tab.classList.add('active');
+      });
+    });
+  }
+
+  document.addEventListener('click', function(e) {
+    const modeButton = document.querySelector('.mode-button');
+    const additionalModes = document.querySelector('.additional-modes');
+    const isClickInside = modeButton.contains(e.target);
+  
+    if (!isClickInside && additionalModes.style.display === 'flex') {
+      additionalModes.style.display = 'none';
+    }
+  });
+  
