@@ -5,6 +5,7 @@
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 .custodia-logo{
@@ -13,33 +14,33 @@ body {
   padding: 0 1em 0 0;
 }
 
-  .top-bar {
-    background: #F5F5F5;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-  }
+.top-bar {
+  background: #F5F5F5;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
 
-  .control-buttons {
-    display: flex;
-    gap: 0.5em;
-  }
+.control-buttons {
+  display: flex;
+  gap: 0.5em;
+}
 
-  .control-buttons button {
-    background: #D9D9D9;
-    position: relative;
-    border: none;
-    color: rgb(53, 53, 53);
-    font-size: 1em;
-    width: 1em; 
-    height: 1em; 
-    border-radius: 50%; 
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    padding: 0;
-    cursor: pointer;
-  }
+.control-buttons button {
+  background: #D9D9D9;
+  position: relative;
+  border: none;
+  color: rgb(53, 53, 53);
+  font-size: 1em;
+  width: 1em; 
+  height: 1em; 
+  border-radius: 50%; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
 
   .control-buttons .icon {
     opacity: 0; 
@@ -125,8 +126,6 @@ body {
     border: 0.2em dotted #28E260; 
   }
 }
-
-  
   .button-bubble {
     background-color: #ffffff;
   }
@@ -134,7 +133,6 @@ body {
   .button-bubble:hover {
     background-color: #BCE0E0; /* Hover-Farbe für den Bubble Button */
   }
-  
   
   .navbar {
     color: white;
@@ -220,7 +218,6 @@ body {
     transition: border-bottom-color 0.3s; 
   }
   .mini-search-area {
-    width: 90vw;
     padding: 1em;
     display: flex;
     align-items: center;
@@ -228,80 +225,125 @@ body {
     box-shadow: 0 1em 2em rgba(0, 0, 0, 0.1); /* X-Offset, Y-Offset, Blur-Radius, Farbe */
   }
 
-  .mode-button {
-    background-color: #28E260;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0.5em 1.2em;
-    border: none;
-    border-radius: 20em;
-    font-size: 1em;
-    max-width: max-content;
-    cursor: pointer;
-}
-
-.mode-button > .material-symbols-outlined,
-.mode-button > div {
-  margin-right: 10px;
-}
-
-.mode-button button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden; 
-  transition: opacity 0.3s ease, visibility 0.3s ease; 
-}
-
-.mode-button:hover button {
-  opacity: 1; 
-  visibility: visible;
-}
-
-.mode-button .additional-modes {
-  display: none;
-  position: absolute;
-  left: 100%; /* Positioniert die zusätzlichen Modes rechts vom Mode-Button */
-  top: 0;
-  background: #f0f0f0; /* Hintergrundfarbe der zusätzlichen Modes */
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.additional-modes {
-  flex-direction: column;
-  background-color: #e0e0e0; /* Graue Farbe für die zusätzlichen Mode-Buttons */
-  border-radius: 5px;
-  width: max-content;
-}
-
-
-.mode-button:hover .additional-modes {
+.mode-selector {
   display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.current-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.5em 1.2em;
+  gap: 0.5em;
+  background-color: #28E260;
+  color: white;
+  border-radius: 20em;
+  z-index: 2;
+}
+
+
+.current-mode.mode-work {
+  background-color: #0075FF;
+}
+
+.current-mode.mode-privat {
+  background-color: rgb(104, 104, 104);
+}
+
+.current-mode.mode-sport {
+  background-color: #FF8A00;
+}
+
+.current-mode.mode-school {
+  background-color: #28E260;
 }
 
 .mode {
-  padding: 5px 10px;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-}
-
-.mode:not(:last-child) {
-  margin-bottom: 5px;
-}
-
-.mode:hover {
-  color: rgba(0,0,0,0.8);
-}
-
-.arrow-buttons {
+  padding: 0.5em 1.1em;
+  gap: 0.5em;
   background-color: #F5F5F5;
-  padding: 0.5em;
-  border-radius: 50%;
+  color: rgb(188, 188, 188);
+  border-radius: 20em;
 }
+
+.add{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.5em 0.5em;
+  gap: 0.5em;
+  background-color: #F5F5F5;
+  color: rgb(188, 188, 188);
+  border-radius: 20em;
+}
+
+.additional-modes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  padding-left: 1em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  white-space: nowrap;
+  transform: translateX(-10px);
+}
+
+.mode-selector:hover .additional-modes {
+  opacity: 1; /* Sichtbar beim Hovern */
+  visibility: visible; /* Wird in der Anzeige angezeigt */
+  transform: translateX(0);
+}
+
+.modeless-area {
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Sanfte Überblendung */
+  opacity: 1;
+  visibility: visible;
+}
+
+.mode-selector:hover ~ .modeless-area {
+  opacity: 0;
+  visibility: hidden; 
+}
+
+.mode span.material-symbols-outlined {
+  transition: color 0.3s ease; /* Weiche Übergänge für das Icon */
+}
+
+
+.mode-work:hover, .mode-work.current {
+  color: #0075FF;
+}
+
+.mode-privat:hover, .mode-privat.current {
+  color: rgb(104, 104, 104);
+}
+
+.mode-sport:hover, .mode-sport.current {
+  color: #FF8A00;
+}
+
+.mode-school:hover, .mode-school.current {
+  color: #28E260;
+}
+
+.current-mode {
+  color: white;
+}
+
 
 .searching-area button {
   display: flex;
@@ -315,24 +357,34 @@ body {
   cursor: pointer;
 }
 
+a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .fa {
   width: 1.5em;
   height: 1.5em;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  text-decoration: none;
+  padding: 0.5em;
   color: #000000;
   background-color: #F5F5F5;
-  border-radius: 3em;
+  border-radius: 50%; /* Macht das Element kreisförmig */
   font-size: 1em; /* Größe des Icons */
+  text-decoration: none;
+}
+
+.fa::before {
+  display: flex; /* Ermöglicht die Nutzung von Flexbox-Eigenschaften auf Pseudo-Elemente */
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Stellt sicher, dass das Pseudo-Element die gesamte Höhe des Containers einnimmt */
 }
 
 .social-media {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5em;
   gap: 0.5em;
 }
 
@@ -359,4 +411,35 @@ body {
   justify-content: space-around;
   gap: 0.5em;
   border-radius: 3em;
+}
+
+.modeless-area {
+  display: flex;
+  align-items: center;
+  gap: 7em;
+}
+
+.data-secure {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.8em;
+  padding: 3em;
+  position: fixed; /* oder 'absolute', abhängig vom gewünschten Verhalten */
+  bottom: 0;
+  width: 100%; /* Streckt sich über die volle Breite */
+  z-index: 10; /* Stellt sicher, dass es über anderen Elementen liegt */
+}
+
+.custodia-logo-secure{
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 1.5em;
+  position: fixed; /* oder 'absolute', abhängig vom gewünschten Verhalten */
+  bottom: 0;
+  width: 100%; /* Streckt sich über die volle Breite */
+  z-index: 10; 
+  position: fixed; 
+  bottom: 0;
+  text-align: right;
 }
