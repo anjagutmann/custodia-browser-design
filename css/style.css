@@ -92,6 +92,7 @@ body {
     transform: scale(0);
     transition: transform 0.5s ease-out, opacity 1.5s ease-out;
     transform-origin: center;
+    z-index: 3;
   }
   
   /* Container für die Animation */
@@ -135,29 +136,39 @@ body {
   }
   
   .navbar {
-    color: white;
     display: flex;
+    align-items: center;
     justify-content: center;
+    width: 100vw;
+    height: 70vh;
+    padding-left: 40em;
   }
 
   .search-area {
     display: flex;
     align-items: center;
     gap: 1em;
-    flex-grow: 1; /* Lässt den Suchbereich wachsen, um mehr Platz einzunehmen */
-    margin: auto;
+    flex-grow: 1;
   }
 
   .search-input {
-    color: #e4e4e4;
-    align-items: center;
-    justify-content: center;
     border: none;
     outline: none;
     font-size: 10em;
     max-width: 4em;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
+
+  .search-input::placeholder {
+    color: #e0e0e0;
+    opacity: 1;
+  }
+  
+
+  .large-icon {
+    font-size: 11em !important; 
+    color: #e0e0e0;
+}
 
   button {
     background: transparent;
@@ -166,12 +177,6 @@ body {
     padding: 0;
     outline: none; 
 
-  }
-
-  button .fa-search {
-    color: #333;
-    font-size: 4em; 
-    align-items: center;
   }
   
   .top-bar {
@@ -443,3 +448,43 @@ a{
   bottom: 0;
   text-align: right;
 }
+
+#frequently-used-sites {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 70%;  /* Anpassen, um es unterhalb der Suchleiste zu platzieren */
+  right: 80%; /* Anpassen, um es rechts von der Suchleiste zu platzieren */
+  transform: translate(50%, -50%);
+}
+
+.website {
+  width: 10em;
+  height: 10em;
+  border-radius: 10px;
+  cursor: grab;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.large {
+  flex: calc(33.333% - 20em); /* Ein Drittel der Breite für kleinere Elemente */
+  height: 10em;
+  width: 20em;
+}
+
+/* Weitere Styles für Drag & Drop-Interaktion */
+.website:active {
+  cursor: grabbing;
+}
+
+.hide {
+  display: none;
+}
+
+.dragging {
+  opacity: 0.4;
+}
+
