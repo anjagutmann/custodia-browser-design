@@ -38,11 +38,22 @@ function toggleNoiseMode() {
   isNoiseModeActive = !isNoiseModeActive;
 }
 
-// Kombinierte Funktion zum Umschalten des Noise-Modus und zur Simulation von Data Poisoning
+// function onNoiseButtonClick() {
+//     // Annahme, dass 'top-bar' die Klasse ist, die Ihre Topbar identifiziert
+//     const topBar = document.querySelector('.top-bar');
+//     topBar.classList.toggle('animate-line');
+// }
+
+/// Entfernen Sie die erste Definition von onNoiseButtonClick
 function onNoiseButtonClick() {
-  simulateDataPoisoning();
-  toggleNoiseMode();
-}
+    simulateDataPoisoning();
+    toggleNoiseMode();
+    
+    // Toggle der Klasse für die Animation der Linie
+    const topBar = document.querySelector('.top-bar');
+    topBar.classList.toggle('animate-line');
+  }
+  
 
 // Funktion zum Hinzufügen von Klick-Event-Listeners zu jedem Tab
 function setupTabs() {

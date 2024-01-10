@@ -183,6 +183,7 @@ body {
     padding: 0.5em;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   
   .button-row {
@@ -198,6 +199,23 @@ body {
     align-items: center;
     gap: 1em;
   }
+
+  .top-bar::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px; /* Höhe der Linie */
+    background: #28E260; /* Farbe der Linie */
+    transition: width 0.5s linear;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .top-bar.animate-line::after {
+    width: 100%; /* Vollständige Breite */
+  }
+  
 
   .tab-container {
     display: flex;
