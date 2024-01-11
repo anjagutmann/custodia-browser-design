@@ -460,7 +460,7 @@ a{
   padding: 1.5em;
   position: fixed; /* oder 'absolute', abhängig vom gewünschten Verhalten */
   bottom: 0;
-  width: 100%; /* Streckt sich über die volle Breite */
+  width: 96%; /* Streckt sich über die volle Breite */
   z-index: 10; 
   position: fixed; 
   bottom: 0;
