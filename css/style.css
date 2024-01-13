@@ -8,6 +8,15 @@ body {
     height: 100%;
 }
 
+.search-mini{
+  border: none;
+  outline: none;
+}
+
+.search-mini .input {
+  background-color: transparent;
+}
+
 .custodia-logo{
   font-weight: 600;
   font-size: 1.5em;
@@ -82,8 +91,71 @@ body {
   .button-noise:hover {
     transform: scale(1.1);
   }
+/* 
+  .noise-active .button-noise {
+    border: 4px dotted rgb(255, 255, 255);
+  }
+   */
+
+.noise-active .top-bar {
+  background-color: #222222; /* Schwarz */
+  transition: background-color 0.5s ease;
+}
+
+.noise-active .mini-search-area {
+  background-color: #343434; /* Dunkelgrau */
+  transition: background-color 0.5s ease;
+}
+
+.noise-active .custodia-logo {
+  color: #ffffff; /*rgb(255, 255, 255)grau */
+  transition: color 0.5s ease;
+}
+
+.noise-active .arrow-buttons {
+  color: #ffffff; /*rgb(255, 255, 255)grau */
+  transition: color 0.5s ease;
+}
+
+.noise-active .refresh {
+  color: #ffffff; 
+  transition: color 0.5s ease;
+}
+
+.noise-active .tab {
+  background-color: #343434; 
+  color: #ffffff;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.noise-active .fa {
+  background-color: #222222; 
+  color: #ffffff;
+  transition: background-color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.noise-active .setting-location-button {
+  color: #ffffff;
+  transition: color 0.5s ease;
+}
+
+.noise-active .setting-buttons {
+  color: #ffffff;
+  background-color: #222222; 
+  transition: background-color 0.5s ease;
+}
+
+.noise-active .mode-selector {
+  display: none; 
+  transition: 0.5s ease;
+}
+
+
+
   
-  .growing-circle {
+  /* .growing-circle {
     position: absolute; 
     width: 30em;
     height: 30em;
@@ -94,7 +166,7 @@ body {
     transform-origin: center;
     z-index: 3;
   }
-  
+   */
   /* Container für die Animation */
 .viewport-border {
   display: none;
@@ -120,13 +192,6 @@ body {
   animation: drawBorder 2s forwards;
 }
 
-/* Animation für den Rand */
-@keyframes drawBorder {
-  to {
-    opacity: 1;
-    border: 0.2em dotted #28E260; 
-  }
-}
   .button-bubble {
     background-color: #ffffff;
   }
@@ -155,8 +220,9 @@ body {
     border: none;
     outline: none;
     font-size: 10em;
-    max-width: 4em;
+    max-width: 3.5em;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    width:100%
   }
 
   .search-input::placeholder {
@@ -331,10 +397,10 @@ body {
   transform: translateX(0);
 }
 
-.modeless-area {
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Sanfte Überblendung */
-  opacity: 1;
-  visibility: visible;
+.mode-area:hover ~ .modeless-area {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mode-selector:hover ~ .modeless-area {
@@ -419,13 +485,22 @@ a{
   border-radius: 3em;
 }
 .setting-buttons {
-  display: flex; /* Setzt das Flexbox-Layout */
-  align-items: center; /* Zentriert die Elemente vertikal */
-  justify-content: center; /* Zentriert die Elemente horizontal, wenn Sie möchten */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
   gap: 0.5em;
   background-color: #F5F5F5;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   border-radius: 3em;
+}
+
+.setting-location-button{
+  display: flex;
+  position: relative;
+  align-items: center; 
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em 1em 0 1em;
 }
 
 .search {
@@ -434,6 +509,21 @@ a{
   justify-content: space-around;
   gap: 0.5em;
   border-radius: 3em;
+}
+
+.search-input:focus {
+  font-size: 5em;
+  color: #1c1c1c;
+  max-width: 6em;
+  transition: width 0.5s ease;
+
+}
+
+
+.mode-area{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .modeless-area {
@@ -505,4 +595,6 @@ a{
 .dragging {
   opacity: 0.4;
 }
+
+
 

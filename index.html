@@ -23,12 +23,13 @@
           <button onclick="windowMinimize()"><span class="icon">─</span></button>
           <button onclick="windowFullscreen()"><span class="icon">⛶</span></button>
         </div>
-        <div class="mode-buttons">
-          <button id="button-noise" class="button-noise" onclick="onNoiseButtonClick()"></button>
+
+        <div class="local">
+          <button class="setting-location-button"><span class="material-symbols-outlined">location_on</span><div>Rektor-Klaus-Straße</div></button>
         </div>
       </div>
       <div class="top-bar-tabs">
-          <div class="tab active">Katzenbabys</div>
+          <div class="tab active"> Home | HfG Schwäb</div>
           <div class="tab">Hundebabys</div>
           <div class="tab">+</div>
         </div>
@@ -38,6 +39,16 @@
     <div id="growing-circle" class="growing-circle"></div>
 
     <div class="mini-search-area">
+
+      <div class="mode-area">
+
+      <div class="mode-buttons">
+        <button id="button-noise" class="button-noise" onclick="onNoiseButtonClick()"></button>
+      </div>
+
+      <div class="profil">
+        <button class="setting-buttons"><span class="material-symbols-outlined">person</span></button>
+      </div>
 
       <div class="mode-selector">
         <div class="current-mode" data-icon="school">
@@ -65,7 +76,8 @@
             <span class="material-symbols-outlined">add</span>
           </div>
         </div>
-      </div>      
+      </div> 
+      </div>   
       
       
       <div class="modeless-area">
@@ -76,8 +88,8 @@
         <button class="arrow-buttons"><span class="material-symbols-outlined">chevron_right</span></button>
       </div>
       <div class="searching-area">
-        <button><span class="material-symbols-outlined">search</span>
-          <div>Suchbegriff eingeben</div>
+        <button><input type="text" class="search-mini" placeholder="Suchbegriff eingeben">
+        <span class="material-symbols-outlined">search</span>
         </button>
       </div>
       <button class="refresh"><span class="material-symbols-outlined">refresh</span></button>
@@ -90,14 +102,8 @@
         <a href="#"class="fa"><span class="material-symbols-outlined">add</span></a>
       </div>
       <div class="settings">
-        <div class="profil">
-          <button class="setting-buttons"><span class="material-symbols-outlined">person</span><div>Profil</div></button>
-        </div>
         <div class="setting">
-          <button class="setting-buttons"><span class="material-symbols-outlined">settings</span><div>Einstellungen</div></button>
-        </div>
-        <div class="local">
-          <button class="setting-location-button"><span class="material-symbols-outlined">location_on</span></button>
+          <button class="setting-buttons"><span class="material-symbols-outlined">settings</span></button>
         </div>
       </div>
     </div>
