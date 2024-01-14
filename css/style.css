@@ -72,14 +72,19 @@ body {
     outline: none;
     margin-right: 5px; /* Abstand zwischen den Buttons */
   }
+
+  #button-noise {
+    width: 3em;
+    height: 3em;
+  }
   
   .button-noise {
     /* Radialer Verlauf und Grund-Styling */
     background-image: radial-gradient(circle, #D9D9D9 0%, #000000 100%);
     border: none;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 5em;
+    height: 5em;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -263,7 +268,7 @@ body {
     position: relative; 
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.5em;
   }
 
   .top-bar::after {
@@ -285,26 +290,22 @@ body {
 
   .tab-container {
     display: flex;
-    justify-content: flex-start; /* Links ausrichten */
-    gap: 0.5em;
-    padding: 0 0 0 4em ;
   }
 
   .tab {
-    width: 10em;
-    height: 2.5em;
+    width: 15em;
+    height: 3em;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #ffffff;
+    background: #f5f5f5;
     color: rgb(75, 75, 75);
+    border: 2px solid rgb(255, 255, 255);
     font-size: 0.8em;
     font-weight: 100;
     border-radius: 10em;
-    padding: 0 4em 0 0;
+    padding: 0 0 0 1em;
     cursor: pointer;
-    border-bottom: 3px solid transparent; /* Unsichtbare Border, um Layoutverschiebungen zu vermeiden */
-    transition: border-bottom-color 0.3s; 
+    gap: 0.5em;
   }
   .mini-search-area {
     padding: 1em;
@@ -320,21 +321,6 @@ body {
   cursor: pointer;
   position: relative;
 }
-
-.current-mode {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0.5em 1.2em;
-  gap: 0.5em;
-  background-color: #28E260;
-  color: white;
-  border-radius: 20em;
-  z-index: 2;
-}
-
-
 .current-mode.mode-work {
   background-color: #0075FF;
 }
@@ -349,6 +335,19 @@ body {
 
 .current-mode.mode-school {
   background-color: #28E260;
+}
+
+.current-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.5em 1.2em;
+  gap: 0.5em;
+  background-color: #28E260;
+  color: white;
+  border-radius: 20em;
+  z-index: 2;
 }
 
 .mode {
@@ -486,11 +485,13 @@ a{
 }
 .setting-buttons {
   display: flex;
+  width: 3em;
+  height: 3em;
   align-items: center; 
   justify-content: center;
   gap: 0.5em;
   background-color: #F5F5F5;
-  padding: 0.5em;
+  margin: 0 1em 1em 1em;
   border-radius: 3em;
 }
 
@@ -596,5 +597,95 @@ a{
   opacity: 0.4;
 }
 
+.mini-search-area {
+  /* Stile für die Mini-Suchleiste */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab.active {
+  border: #2e2e2e;
+  font-weight: bold;
+  gap: 0.5em;
+  background: #ffffff;
+
+}
+
+.tab-plus {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    color: rgb(75, 75, 75);
+    font-size: 0.8em;
+    font-weight: 100;
+    border-radius: 10em;
+    cursor: pointer;
+    gap: 0.5em;
+    border: 2px solid rgb(255, 255, 255);
+}
 
 
+.add-tab {
+  /* Stile für den + Button */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  /* Zusätzliche Stile nach Bedarf */
+}
+
+img{
+  width: 4em;
+  height: 4em;
+  overflow: hidden;
+  position: absolute;
+}
+
+.mode-drag-target {
+  border: 1px solid #D3D3D3; /* Hellgraue Border */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 10;
+  /* Weitere Styles nach Bedarf */
+}
+
+.mode-selector {
+  cursor: grab;
+}
+
+.mode-selector:active {
+  cursor: grabbing;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0; /* Startet als versteckt */
+  position: fixed;
+  z-index: 1; /* Stellt sicher, dass die Sidebar über anderen Elementen liegt */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Hintergrundfarbe der Sidebar */
+  overflow-x: hidden; /* Versteckt den horizontalen Scrollbalken */
+  transition: 0.5s; /* Glatte Übergänge */
+  padding-top: 60px; /* Platz für den Inhalt */
+}
+
+/* Stile für den Inhalt der Sidebar */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}

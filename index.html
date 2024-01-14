@@ -29,9 +29,10 @@
         </div>
       </div>
       <div class="top-bar-tabs">
-          <div class="tab active"> Home | HfG Schwäb</div>
-          <div class="tab">Hundebabys</div>
-          <div class="tab">+</div>
+          <div class="tab active"> <span class="material-symbols-outlined">public</span>Home | HfG Schwäb</div>
+          <div class="tab"><span class="material-symbols-outlined">public</span>Neuer Tab</div>
+          <div class="tab"><span class="material-symbols-outlined">public</span>Neuer Tab</div>
+          <div class="tab-plus">+</div>
         </div>
       </div>          
     </div>
@@ -42,12 +43,12 @@
 
       <div class="mode-area">
 
-      <div class="mode-buttons">
-        <button id="button-noise" class="button-noise" onclick="onNoiseButtonClick()"></button>
+      <div class="profil">
+        <button class="setting-buttons"><img src="pcs/Michel-PC.png" alt="Profilbild" /></button>
       </div>
 
-      <div class="profil">
-        <button class="setting-buttons"><span class="material-symbols-outlined">person</span></button>
+      <div class="mode-buttons">
+        <button id="button-noise" class="button-noise" onclick="onNoiseButtonClick()"></button>
       </div>
 
       <div class="mode-selector">
@@ -88,9 +89,8 @@
         <button class="arrow-buttons"><span class="material-symbols-outlined">chevron_right</span></button>
       </div>
       <div class="searching-area">
-        <button><input type="text" class="search-mini" placeholder="Suchbegriff eingeben">
-        <span class="material-symbols-outlined">search</span>
-        </button>
+        
+        <button><span class="material-symbols-outlined">search</span><input type="text" class="search-mini" placeholder="Suchbegriff eingeben"></button>
       </div>
       <button class="refresh"><span class="material-symbols-outlined">refresh</span></button>
     </div>
@@ -109,18 +109,26 @@
     </div>
   </div>
 
+  <div class="sidebar" id="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!-- Weitere Inhalte der Seitenleiste -->
+  </div>
+  
+
   <div class="navbar">
+    
+    
     <div class="search-area">
       <input type="text" class="search-input" placeholder="Search">
       <button><span class="material-symbols-outlined large-icon">search</span></button>
     </div>
 </div>
 
-<div id="frequently-used-sites" class="frequently-used-sites">
+<!-- <div id="frequently-used-sites" class="frequently-used-sites">
   <div id="site1" class="website" draggable="true" style="background-color: #D6F2C9;">Website 1</div>
   <div id="site2" class="website" draggable="true" style="background-color: #F25C05;">Website 2</div>
   <div id="site3" class="website large" draggable="true" style="background-color: #A71508;">Website 3</div>
-</div>
+</div> -->
 
 
 

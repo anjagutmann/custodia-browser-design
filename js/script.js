@@ -96,30 +96,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     });
     
-    const container = document.getElementById('frequently-used-sites');
-    container.addEventListener('dragover', e => {
-      e.preventDefault();
-      const draggable = document.querySelector('.dragging');
-      const afterElement = getDragAfterElement(container, e.clientX, e.clientY);
-      if (afterElement == null) {
-        container.appendChild(draggable);
-      } else {
-        container.insertBefore(draggable, afterElement);
-      }
+  //   const container = document.getElementById('frequently-used-sites');
+  //   container.addEventListener('dragover', e => {
+  //     e.preventDefault();
+  //     const draggable = document.querySelector('.dragging');
+  //     const afterElement = getDragAfterElement(container, e.clientX, e.clientY);
+  //     if (afterElement == null) {
+  //       container.appendChild(draggable);
+  //     } else {
+  //       container.insertBefore(draggable, afterElement);
+  //     }
+  //   });
+  // });
+  
+  // function getDragAfterElement(container, x, y) {
+  //   const draggableElements = [...container.querySelectorAll('.website:not(.dragging)')];
+  
+  //   return draggableElements.reduce((closest, child) => {
+  //     const box = child.getBoundingClientRect();
+  //     const offset = y - box.top - box.height / 2;
+  //     if (offset < 0 && offset > closest.offset) {
+  //       return { offset: offset, element: child };
+  //     } else {
+  //       return closest;
+  //     }
+  //   }, { offset: Number.NEGATIVE_INFINITY }).element;
+  // }
+
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      // Zusätzliche Logik zur Anzeige des Inhalts des ausgewählten Tabs
     });
   });
   
-  function getDragAfterElement(container, x, y) {
-    const draggableElements = [...container.querySelectorAll('.website:not(.dragging)')];
-  
-    return draggableElements.reduce((closest, child) => {
-      const box = child.getBoundingClientRect();
-      const offset = y - box.top - box.height / 2;
-      if (offset < 0 && offset > closest.offset) {
-        return { offset: offset, element: child };
-      } else {
-        return closest;
-      }
-    }, { offset: Number.NEGATIVE_INFINITY }).element;
-  }
-  
+  document.querySelector('.add-tab').addEventListener('click', function() {
+    // Logik für das Hinzufügen eines neuen Tabs
+  });
+});
