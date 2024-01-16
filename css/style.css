@@ -8,6 +8,49 @@ body {
     height: 100%;
 }
 
+.h1-responsive {
+  margin-left: 5%;
+}
+.candidate {
+  width:120px;
+  height:120px;
+}
+
+#vis {
+  scale: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+text {
+  font: 10px sans-serif;
+  pointer-events:none;
+}
+circle {
+  stroke: #565352;
+  stroke-width: 1;
+}
+rect {
+  border: 1px solid black;
+  outline-color: red;
+}
+div.tooltip {	
+    position: absolute;			
+    border-radius: 50%;
+	  width: 250px;
+	  height: 250px;
+    padding: 10px 0 10px 5px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,1);
+    pointer-events: none;	
+}
+.tooltiptext {
+  padding: 10px 0 0 0;
+  text-align: center;
+}
+
 .search-mini{
   border: none;
   outline: none;

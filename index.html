@@ -10,11 +10,11 @@
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
-    <script src="js/script.js"></script>
 
     <div class="top-bar">
       <div class="button-row">
@@ -24,7 +24,7 @@
           <button onclick="windowFullscreen()"><span class="icon">⛶</span></button>
         </div>
 
-        <div class="local">
+        <div class="local">   
           <button class="setting-location-button"><span class="material-symbols-outlined">location_on</span><div>Rektor-Klaus-Straße</div></button>
         </div>
       </div>
@@ -113,10 +113,14 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!-- Weitere Inhalte der Seitenleiste -->
   </div>
-  
+  <div class="container-fluid">
+    <h1 class="h1-responsive">Hochschule<br><small class="text-muted">
+      Interactive Bubblés
+      </small>
+      <div class="container-fluid" id="vis"></div>
+  </div>
 
   <div class="navbar">
-    
     
     <div class="search-area">
       <input type="text" class="search-input" placeholder="Search">
