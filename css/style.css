@@ -322,7 +322,11 @@ body {
   position: relative;
 }
 .current-mode.mode-work {
-  background-color: #0075FF;
+  background-color: #0075FF !important;
+}
+
+.current-mode.mode:focus-visible {
+  background-color: #0075FF !important;
 }
 
 .current-mode.mode-privat {
