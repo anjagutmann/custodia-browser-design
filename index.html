@@ -52,6 +52,24 @@
       </div>
 
       <div class="mode-selector">
+
+   <!-- Add a toggle switch -->
+   <input type="checkbox" id="containerToggle">
+
+   <!-- Your existing HTML code -->
+
+   <div class="container-fluid" id="container">
+       <!-- Content of the container -->
+   </div>
+
+   <div class="container-fluid" id="vis">
+       <!-- Content of the vis container -->
+   </div>
+
+   <script src="https://d3js.org/d3.v3.min.js"></script>
+   <script src="js/script.js"></script>
+   <script src="js/toggleContainer.js"></script>
+
         <div class="current-mode" data-icon="school">
           <span class="material-symbols-outlined">school</span>
           <div>Hochschule</div>
@@ -113,15 +131,15 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <!-- Weitere Inhalte der Seitenleiste -->
   </div>
-  <div class="container-fluid">
-    <h1 class="h1-responsive">Hochschule<br><small class="text-muted">
+
+  <div id="vis">
+    <h1 class="h1-responsive">Hochschule<br></h1><small class="text-muted">
       Interactive Bubblés
       </small>
       <div class="container-fluid" id="vis"></div>
   </div>
 
   <div class="navbar">
-    
     <div class="search-area">
       <input type="text" class="search-input" placeholder="Search">
       <button><span class="material-symbols-outlined large-icon">search</span></button>

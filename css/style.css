@@ -21,10 +21,26 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  margin-left: -235px;
-  margin-top: 30px;
+  margin-left: -404px;
+  margin-top: -60px;
   outline: 2px solid #000; /* Set the outline width and color */
   border-radius: 2%;
+}
+
+ .container-fluid {
+  display: none;
+} 
+
+#containerToggle {
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0%;
+  /* Adjust the size of the checkbox */
+  width: 150px !important;  /* Set your desired width with !important */
+  height: 30px; /* Set your desired height */
+  box-sizing: content-box;
 }
 
 text {

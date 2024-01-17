@@ -1,3 +1,19 @@
+// toggleContainer.js
+
+// Function to toggle the container class
+function toggleContainer() {
+  var container = document.getElementById('container');
+  var vis = document.getElementById('vis');
+
+  container.classList.toggle('container-fluid', document.getElementById('containerToggle').checked);
+  vis.classList.toggle('container-fluid', document.getElementById('containerToggle').checked);
+}
+
+// Attach the toggleContainer function to the change event of the toggle switch
+document.getElementById('containerToggle').addEventListener('change', toggleContainer);
+
+
+
 var width = 1200,
   height = 1000,
   padding = 11, // separation between same-color nodes
