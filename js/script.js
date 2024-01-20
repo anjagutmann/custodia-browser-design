@@ -354,3 +354,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Logik für das Hinzufügen eines neuen Tabs
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var searchIcon = document.getElementById('search-button'); // Angenommen, das ist Ihr Such-Icon
+  var blurBackground = document.createElement('div');
+  blurBackground.id = 'blur-background';
+  blurBackground.className = 'blur-background';
+  document.body.appendChild(blurBackground);
+
+  searchIcon.addEventListener('mouseenter', function() {
+    blurBackground.classList.add('blur-active');
+  });
+
+  searchIcon.addEventListener('mouseleave', function() {
+    blurBackground.classList.remove('blur-active');
+  });
+});
+
+

@@ -5,7 +5,8 @@
 body {
     padding: 0;
     margin: 0;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .h1-responsive {
@@ -274,7 +275,6 @@ div.tooltip {
     justify-content: center;
     width: 100vw;
     height: 70vh;
-    padding-left: 40em;
   }
 
   .search-area {
@@ -282,6 +282,7 @@ div.tooltip {
     align-items: center;
     gap: 1em;
     flex-grow: 1;
+    padding-left: 45em;
   }
 
   .search-input {
@@ -755,4 +756,24 @@ img{
 
 .sidebar a:hover {
   color: #f1f1f1;
+}
+
+/* Aktualisierter Stil für den Unschärfe-Hintergrund mit einer Transition */
+.blur-background {
+  display: none; /* Anfangszustand - nicht sichtbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(0); /* Beginnt ohne Unschärfe */
+  transition: backdrop-filter 0.5s ease, display 0.5s ease; /* Sanfte Übergänge für den Unschärfe-Effekt und das Anzeigen/Ausblenden */
+  z-index: 2000; /* Hoch genug, um über anderen Inhalten zu sein, aber unter dem Overlay */
+}
+
+/* Stil, wenn aktive (sichtbar und unscharf) */
+.blur-active {
+  display: block;
+  backdrop-filter: blur(10px); /* Ziel-Unschärfe-Wert */
+  z-index: 2000;
 }
